@@ -90,20 +90,37 @@ public class GPSUtils {
 		String timestr;
 		String TIMESEP = ":";
 
+		int rest;
 		
-
+		
+		int hh = secs / 3600;
+		rest = secs % 3600;
+		int mm = rest/60;
+		rest=rest%60;
+		int ss = rest;
+		
+		String hhsr = (hh > 10) ? ""+hh : "0" + hh;
+		String mmsr = (mm > 10) ? ""+mm : "0" + mm;
+		String sssr = (ss > 10) ? ""+ss : "0" + ss;
+		
+		String time = (hhsr+TIMESEP+mmsr+TIMESEP+sssr);
+		
+		return String.format("%2s%s","", time);
 	}
 	private static int TEXTWIDTH = 10;
 
 	public static String formatDouble(double d) {
 
-		String str;
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
 		
+	
+		
+		
+		String k = String.format("%1$10.2f",d);
+		
+		String[] kTab = k.split("");
+		kTab[k.indexOf(",")]=".";
+		k=String.join("", kTab);
+		
+		return k;
 	}
 }
