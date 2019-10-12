@@ -18,7 +18,7 @@ public class GPSDataConverter {
 		
 //		"2017-08-13T08:52:26.000Z"
 		
-		int secs;
+		int secs=0;
 		int hr, min, sec;
 		
 		String [] timeStrTab = timestr.split("");
@@ -30,16 +30,16 @@ public class GPSDataConverter {
 //	Timer
 		if(timeStrNum[0].contentEquals("0")) {
 			hr = Integer.parseInt(timeStrNum[1]);
-			secs = hr * 3600;
+			secs += hr * 3600;
 		}
 		else {
 			hr = Integer.parseInt(timeStrNum[0]+timeStrNum[1]);
-			secs = hr * 3600;
+			secs += hr * 3600;
 		}
 		
 //		Minutter 
 		if(timeStrNum[2].contentEquals("0")) {
-			min = Integer.parseInt(timeStrNum[2]);
+			min = Integer.parseInt(timeStrNum[3]);
 			secs += min * 60;
 		}
 		else {

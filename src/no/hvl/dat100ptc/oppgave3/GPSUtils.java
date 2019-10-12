@@ -40,6 +40,9 @@ public class GPSUtils {
 		 latitudes[i] = gpspoints[i].getLatitude();
 	 }
 	 return latitudes;
+	 
+	 
+	 
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {

@@ -24,8 +24,7 @@ public class GPSData {
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
 		boolean inserted = false;
-
-		if(antall < gpspoints.length) {
+        	if(antall < gpspoints.length) {
 			gpspoints[antall] = gpspoint;
 			antall++;
 			inserted = true;
